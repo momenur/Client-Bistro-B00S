@@ -60,6 +60,7 @@ const Category = () => {
                         <h1 className='mb-4 text-4xl uppercase'>Bistro boss</h1>
                         <p className='text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus accusantium magnam beatae rerum esse. Doloremque voluptate odio esse culpa sunt quasi reiciendis aspernatur corporis maxime commodi, enim, ut consectetur incidunt. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias quasi porro delectus vel maxime eligendi odio dignissimos nesciunt, rerum officiis?</p>
                     </div>
+                    
                 </div>
             </div>
         </div>

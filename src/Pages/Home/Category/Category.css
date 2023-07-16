@@ -9,4 +9,6 @@
   .bg-custom{
     background-image: url('../../../assets/Home/chef-service.jpg');
     background-size: cover;
+    background-position: cover;
+    background-repeat: no-repeat;
   }
