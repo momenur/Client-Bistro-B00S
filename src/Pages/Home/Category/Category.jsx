@@ -20,11 +20,11 @@ const Category = () => {
 
         <div>
             <SectionTitle
-            subHeading="From 11.00am to 10.00pm"
-            heading="order online"
+                subHeading="From 11.00am to 10.00pm"
+                heading="order online"
             ></SectionTitle>
             <Swiper
-                slidesPerView={4}
+                slidesPerView={4.2}
                 spaceBetween={0}
                 freeMode={true}
                 pagination={{
@@ -35,25 +35,33 @@ const Category = () => {
             >
                 <SwiperSlide>
                     <img src={slide1} alt="" />
-                    <h3 className='md:text-3xl uppercase text-center text-white -mt-6 md:-mt-16 md:me-10'>salads</h3>
+                    <h3 className='-mt-6 text-center text-white uppercase md:text-3xl md:-mt-16 md:me-10'>salads</h3>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={slide2} alt="" />
-                    <h3 className='md:text-3xl uppercase text-center text-white -mt-6 md:-mt-16 md:me-10'>pizzas</h3>
+                    <h3 className='-mt-6 text-center text-white uppercase md:text-3xl md:-mt-16 md:me-10'>pizzas</h3>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={slide3} alt="" />
-                    <h3 className='md:text-3xl uppercase text-center text-white -mt-6 md:-mt-16 md:me-10'>Soups</h3>
+                    <h3 className='-mt-6 text-center text-white uppercase md:text-3xl md:-mt-16 md:me-10'>Soups</h3>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={slide4} alt="" />
-                    <h3 className='md:text-3xl uppercase text-center text-white -mt-6 md:-mt-16 md:me-10'>Desserts</h3>
+                    <h3 className='-mt-6 text-center text-white uppercase md:text-3xl md:-mt-16 md:me-10'>Desserts</h3>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={slide5} alt="" />
-                    <h3 className='md:text-3xl uppercase text-center text-white -mt-6 md:-mt-16 md:me-10'>Desserts</h3>
+                    <h3 className='-mt-6 text-center text-white uppercase md:text-3xl md:-mt-16 md:me-10'>Desserts</h3>
                 </SwiperSlide>
             </Swiper>
+            <div className='mt-24 bg-custom'>
+                <div className='py-32 mx-32 '>
+                    <div className='px-20 py-20 text-center text-white bg-black bg-opacity-50'>
+                        <h1 className='mb-4 text-4xl uppercase'>Bistro boss</h1>
+                        <p className='text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus accusantium magnam beatae rerum esse. Doloremque voluptate odio esse culpa sunt quasi reiciendis aspernatur corporis maxime commodi, enim, ut consectetur incidunt. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias quasi porro delectus vel maxime eligendi odio dignissimos nesciunt, rerum officiis?</p>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
