@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import MenuItem from "../MenuItem/MenuItem";
 
-const ShowItems = ({ items }) => {
+const ShowItems = ({ items, title }) => {
+    console.log(title);
     return (
         <div className="mt-20 mb-16">
             <div className="grid grid-cols-2 gap-10">
@@ -9,7 +11,9 @@ const ShowItems = ({ items }) => {
                 }
             </div>
             <div className="flex justify-center mt-8">
-                <button className="text-yellow-500 border-t-0 border-b-4 border-s-0 border-e-0 btn btn-outline hover:text-white">ORDER YOUR FAVOURITE FOOD</button>
+                <Link to={`/order/${title}`}>
+                    <button className="text-yellow-500 border-t-0 border-b-4 border-s-0 border-e-0 btn btn-outline hover:text-white">ORDER YOUR FAVOURITE FOOD</button>
+                </Link>
             </div>
         </div>
     );

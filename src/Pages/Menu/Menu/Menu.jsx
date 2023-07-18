@@ -27,27 +27,27 @@ const Menu = () => {
             subHeading="dont't miss"
             heading="TODAY'S OFFER"
             ></SectionTitle>
-            <ShowItems items={offered}></ShowItems>
+            <ShowItems items={offered} title="salad"></ShowItems>
 
             {/* Desserts Items */}
             <Cover img={dessertImg} title="desserts" subTitle="Lorem Ipsum has been the industry’s standard dummy text.Lorem Ipsum has been the industry’s standard dummy text."
             ></Cover>
-            <ShowItems items={dessert}></ShowItems>
+            <ShowItems items={dessert} title="desserts"></ShowItems>
 
             {/* Pizza Items */}
             <Cover img={pizzaImg} title="pizza" subTitle="Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
             ></Cover>
-            <ShowItems items={pizza}></ShowItems>
+            <ShowItems items={pizza} title="pizza"></ShowItems>
 
             {/* Salad Items */}
             <Cover img={saladImg} title="salads" subTitle="Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
             ></Cover>
-            <ShowItems items={salad}></ShowItems>
+            <ShowItems items={salad} title="salads"></ShowItems>
 
             {/* Soup Items */}
             <Cover img={soupImg} title="soups" subTitle="Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
             ></Cover>
-            <ShowItems items={sopu}></ShowItems>
+            <ShowItems items={sopu} title="soups"></ShowItems>
         </div>
     );
 };
