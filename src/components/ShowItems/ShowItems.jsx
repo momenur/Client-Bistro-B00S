@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import MenuItem from "../MenuItem/MenuItem";
 
 const ShowItems = ({ items, title }) => {
-    console.log(title);
     return (
         <div className="mt-20 mb-16">
             <div className="grid grid-cols-2 gap-10">

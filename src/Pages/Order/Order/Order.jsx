@@ -8,15 +8,30 @@ import useMenu from '../../../hooks/useMenu';
 import OrderTab from '../OrderTab/OrderTab';
 import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
+import { Oval } from 'react-loader-spinner';
 const Order = () => {
     const categories = ['salads', 'pizza', 'soups', 'desserts', 'drinks'];
-    const {category} = useParams();
+    const { category } = useParams();
     const initialIndex = categories.indexOf(category);
     const [tabIndex, setTabIndex] = useState(initialIndex);
-    const [menu] = useMenu();
-    console.log(category);
+    const [menu, loading] = useMenu();
+    if (loading) {
+        return <div className="flex items-center justify-center h-screen">
+            <Oval
+                height={80}
+                width={80}
+                color="orange"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+                ariaLabel='oval-loading'
+                secondaryColor="orange"
+                strokeWidth={2}
+                strokeWidthSecondary={2}
 
-    
+            />
+        </div>
+    }
     const dessert = menu.filter(item => item.category === "dessert")
     const soup = menu.filter(item => item.category === "soup")
     const pizza = menu.filter(item => item.category === "pizza")
