@@ -27,7 +27,7 @@ const Menu = () => {
             subHeading="dont't miss"
             heading="TODAY'S OFFER"
             ></SectionTitle>
-            <ShowItems items={offered} title="salad"></ShowItems>
+            <ShowItems items={offered} title="offered"></ShowItems>
 
             {/* Desserts Items */}
             <Cover img={dessertImg} title="desserts" subTitle="Lorem Ipsum has been the industry’s standard dummy text.Lorem Ipsum has been the industry’s standard dummy text."

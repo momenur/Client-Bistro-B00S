@@ -10,7 +10,7 @@ import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
 import { Oval } from 'react-loader-spinner';
 const Order = () => {
-    const categories = ['salads', 'pizza', 'soups', 'desserts', 'drinks'];
+    const categories = ['salads', 'pizza', 'soups', 'desserts', 'drinks','offered'];
     const { category } = useParams();
     const initialIndex = categories.indexOf(category);
     const [tabIndex, setTabIndex] = useState(initialIndex);
@@ -37,6 +37,7 @@ const Order = () => {
     const pizza = menu.filter(item => item.category === "pizza")
     const salad = menu.filter(item => item.category === "salad")
     const drinks = menu.filter(item => item.category === "drinks")
+    const offered = menu.filter(item => item.category === "offered")
     return (
         <div>
             <Helmet>
@@ -51,6 +52,7 @@ const Order = () => {
                         <Tab>Soup</Tab>
                         <Tab>Dessert</Tab>
                         <Tab>Drinks</Tab>
+                        <Tab>Offered</Tab>
                     </TabList>
                     <TabPanel>
                         <OrderTab items={salad}></OrderTab>
@@ -66,6 +68,9 @@ const Order = () => {
                     </TabPanel>
                     <TabPanel>
                         <OrderTab items={drinks}></OrderTab>
+                    </TabPanel>
+                    <TabPanel>
+                        <OrderTab items={offered}></OrderTab>
                     </TabPanel>
                 </Tabs>
             </div>
