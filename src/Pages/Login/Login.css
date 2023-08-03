@@ -1,0 +1,7 @@
+.background-authentication{
+    background-image: url('../../assets/authentication/bg.png');
+}
+.inner-background-authentication{
+    padding: 40px;
+    background-image: url('../../assets/authentication/bg.png');
+}
