@@ -2,6 +2,13 @@ import { Link } from 'react-router-dom';
 import imageAuthentication from '../../assets/authentication/authentication1.png'
 import './Login.css'
 const Login = () => {
+    const handleLogin = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+    }
     return (
         <div className="min-h-screen background-authentication">
             <div className='p-24'>
@@ -11,7 +18,7 @@ const Login = () => {
                     </div>
                     <div>
                         <h1 className='text-center font-bold text-3xl mb-4'>Login</h1>
-                        <form className="card shadow-none flex-shrink-0 w-full md:min-w-[450px] bg-transparent">
+                        <form onSubmit={handleLogin} className="card shadow-none flex-shrink-0 w-full md:min-w-[450px] bg-transparent">
                             <div className="card-body">
                                 <div className="form-control">
                                     <label className="label">
