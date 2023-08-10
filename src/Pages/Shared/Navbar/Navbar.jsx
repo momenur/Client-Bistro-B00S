@@ -35,6 +35,7 @@ const Navbar = () => {
                 <li><Link to='/login'>Login</Link></li>
             </>
         }
+        <li><Link to='/private'>Private Route</Link></li>
 
     </>
     return (
@@ -60,7 +61,8 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <div className="navbar-end">
+                <div className="gap-4 navbar-end">
+                    <a className="text-xl font-semibold text-yellow-500">{user.displayName}</a>
                     <a className="">Button</a>
                 </div>
             </div>

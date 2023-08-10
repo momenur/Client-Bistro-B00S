@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import imageAuthentication from '../../assets/authentication/authentication1.png'
 import './Register.css'
 import { useForm } from 'react-hook-form';
@@ -6,23 +6,30 @@ import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
 const Register = () => {
-    const {createUser} = useContext(AuthContext)
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const navigate = useNavigate();
+    const from = "/"
+    const { createUser, updateUserProfile } = useContext(AuthContext)
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
         createUser(data.email, data.password)
-        .then(result => {
-            const loggedUser = result.user;
-            console.log(loggedUser);
-            Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: 'User Register Successfully',
-                showConfirmButton: false,
-                timer: 1500
-              })
-        })
-        
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                updateUserProfile(data.name, data.photo)
+                    .then(() => {
+                        reset()
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'User Register Successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        navigate(from, { replace: true });
+                    })
+                    .catch(error => console.log(error))
+            })
     };
     return (
         <div className="min-h-screen background-authentication">
