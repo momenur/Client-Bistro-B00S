@@ -1,6 +1,9 @@
 
 const FoodCard = ({ item }) => {
     const { name, image, price, recipe } = item;
+    const handleAddCrat = item => {
+        console.log(item);
+    }
     return (
         <div>
             <div className="rounded-none shadow-xl card w-96 bg-base-100">
@@ -11,7 +14,7 @@ const FoodCard = ({ item }) => {
                     <p className="px-6 text-sm">{recipe}</p>
                     <div className="flex justify-center">
                         <div className="absolute bottom-4">
-                            <button className="text-black border-t-0 border-b-4 bg-slate-300 border-s-0 border-e-0 btn btn-outline hover:text-white">add to cart</button>
+                            <button onClick={() => handleAddCrat(item)} className="text-black border-t-0 border-b-4 bg-slate-300 border-s-0 border-e-0 btn btn-outline hover:text-white">add to cart</button>
                         </div>
                     </div>
                 </div>

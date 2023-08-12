@@ -4,38 +4,43 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import Swal from "sweetalert2";
 
 const Navbar = () => {
-    const { user, loading, logOut} = useContext(AuthContext)
-    if(loading){
+    const { user, loading, logOut } = useContext(AuthContext)
+    if (loading) {
         return <p>Loading</p>
     }
     const handleLogOut = () => {
         logOut()
-        .then( ()=> {
-            Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: 'Sign Out Successfully',
-                showConfirmButton: false,
-                timer: 1500
-              })
-        })
-        .catch(error =>{
-            console.log(error.massage);
-        })
+            .then(() => {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Sign Out Successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            })
+            .catch(error => {
+                console.log(error.massage);
+            })
     }
     const navItem = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/menu'>Our Menu</Link></li>
         <li><Link to={`/order/salads`}>Order Food</Link></li>
+        <li>
+            <Link to='/private'>
+                    Inbox
+                    <div className="badge badge-secondary">+99</div>
+            </Link>
+        </li>
         {
             user ? <>
-            <li onClick={handleLogOut}><Link to='/login'>Sign Out</Link></li>
+                <li onClick={handleLogOut}><Link to='/login'>Sign Out</Link></li>
             </> : <>
                 <li><Link to='/register'>Sign Up</Link></li>
                 <li><Link to='/login'>Login</Link></li>
             </>
         }
-        <li><Link to='/private'>Private Route</Link></li>
 
     </>
     return (
@@ -62,7 +67,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="gap-4 navbar-end">
-                    <a className="text-xl font-semibold text-yellow-500">{user.displayName}</a>
+                    <a className="text-xl font-semibold text-yellow-500">{user?.displayName}</a>
                     <a className="">Button</a>
                 </div>
             </div>
