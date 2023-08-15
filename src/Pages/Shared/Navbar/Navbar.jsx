@@ -2,9 +2,11 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import useCart from "../../../hooks/useCart";
 
 const Navbar = () => {
     const { user, loading, logOut } = useContext(AuthContext)
+    const [cart] = useCart();
     if (loading) {
         return <p>Loading</p>
     }
@@ -28,9 +30,9 @@ const Navbar = () => {
         <li><Link to='/menu'>Our Menu</Link></li>
         <li><Link to={`/order/salads`}>Order Food</Link></li>
         <li>
-            <Link to='/private'>
+            <Link to='dashboard/mycart'>
                     Inbox
-                    <div className="badge badge-secondary">+99</div>
+                    <div className="badge badge-secondary">+{cart?.length}</div>
             </Link>
         </li>
         {
