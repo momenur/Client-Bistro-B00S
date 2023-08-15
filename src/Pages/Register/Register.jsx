@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 const Register = () => {
     const navigate = useNavigate();
     const from = "/"
@@ -33,6 +34,9 @@ const Register = () => {
     };
     return (
         <div className="min-h-screen background-authentication">
+            <Helmet>
+                <title>Bistro Boss | Sign Up</title>
+            </Helmet>
             <div className='p-24'>
                 <div className='items-center justify-center mx-auto inner-background-authentication drop-shadow-2xl md:flex'>
                     <div>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import useCart from "../../../hooks/useCart";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Navbar = () => {
     const { user, loading, logOut } = useContext(AuthContext)
@@ -31,7 +32,7 @@ const Navbar = () => {
         <li><Link to={`/order/salads`}>Order Food</Link></li>
         <li>
             <Link to='dashboard/mycart'>
-                    Inbox
+                   <FaShoppingCart/> Shopping Cart
                     <div className="badge badge-secondary">+{cart?.length}</div>
             </Link>
         </li>
