@@ -5,6 +5,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet-async';
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 const Login = () => {
     const { signIn } = useContext(AuthContext);
 
@@ -61,6 +62,7 @@ const Login = () => {
                                 <div>
                                     <p className='text-[#D1A054] text-center mt-4'>New here? <span className='hover:text-blue-600'><Link to="/register">Create a New Account</Link></span></p>
                                 </div>
+                                <SocialLogin></SocialLogin>
                             </div>
                         </form>
                     </div>
