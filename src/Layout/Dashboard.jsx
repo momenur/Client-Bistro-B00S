@@ -9,7 +9,7 @@ const Dashboard = () => {
                 <title>Bistro Boss | Dashboard</title>
             </Helmet>
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-            <div className="flex flex-col items-center justify-center drawer-content">
+            <div className="flex flex-col px-10 drawer-content bg-base-200">
 
                 <Outlet />
 
