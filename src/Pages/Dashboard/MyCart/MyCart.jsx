@@ -1,18 +1,46 @@
+import Swal from "sweetalert2";
 import SectionTitle from "../../../components/SectionTitle";
 import useCart from "../../../hooks/useCart";
 import { FaTrash } from 'react-icons/fa';
 
 const MyCart = () => {
-    const [cart] = useCart();
+    const [cart, refetch] = useCart();
     const total = cart.reduce((sum, item) => item.price + sum, 0)
-    console.log(cart);
+    const handleDelete = (id) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You want to delete this item!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'delete!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/carts/${id}`, {
+                    method: 'DELETE'
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0){
+                        refetch();
+                        Swal.fire(
+                            'Deleted!',
+                            'Your Item has been deleted.',
+                            'success'
+                          ) 
+                    }
+                })
+            }
+        })
+    }
     return (
         <div className="w-full">
             <SectionTitle subHeading='my Cart' heading='Added Items'></SectionTitle>
             <div className="px-8 py-10 bg-white">
                 <div className="flex justify-between text-3xl font-semibold uppercase">
-                    <h1>Total Items {cart.length}</h1>
-                    <h1>Total Items {total}</h1>
+                    <h1>Total Items: {cart.length}</h1>
+                    <h1>Total Price: ${total}</h1>
                     <button className="btn btn-sm bg-[#D1A054]">Payment</button>
                 </div>
 
@@ -54,7 +82,7 @@ const MyCart = () => {
                                     </td>
                                     <td>{row.price}</td>
                                     <th>
-                                        <button className="btn bg-[#B91C1C] text-xl text-white p-3 hover:bg-yellow-500 hover:text-[#B91C1C]"><FaTrash/></button>
+                                        <button onClick={() => handleDelete(row._id)} className="btn bg-[#B91C1C] text-xl text-white p-3 hover:bg-yellow-500 hover:text-[#B91C1C]"><FaTrash /></button>
                                     </th>
                                 </tr>)
                             }
