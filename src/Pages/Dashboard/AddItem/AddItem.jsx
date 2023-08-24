@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 import SectionTitle from "../../../components/SectionTitle";
 
 const AddItem = () => {
@@ -9,7 +10,28 @@ const AddItem = () => {
         const recipe = form.recipe.value;
         const itemPhoto = form.itemPhoto.value;
         const category = form.category.value;
-        
+        console.log(name, price, recipe, itemPhoto, category);
+        const addItem = {name, price, recipe, image:itemPhoto, category}
+        fetch('http://localhost:5000/menu', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(addItem)
+        })
+        .then(res => res.json()
+            .then(data => {
+                if(data.insertedId){
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Your Food Added to Cart',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            }))
+
     }
     return (
         <div>
@@ -50,7 +72,13 @@ const AddItem = () => {
                                     <label className="label">
                                         <span className="label-text">Category</span>
                                     </label>
-                                    <input type="text" name="category" placeholder="Give Item Image URL" className="input input-bordered" />
+                                    <select id="cars" className="px-4 py-3 border-2 rounded-lg" name="category">
+                                        <option className="" value="salad">Salad</option>
+                                        <option className="" value="pizza">Pizza</option>
+                                        <option className="" value="soup">Soup</option>
+                                        <option className="" value="drinks">Drinks</option>
+                                        <option className="" value="dessert">Dessert</option>
+                                    </select>
                                 </div>
                             </div>
                             <div className="mx-auto mt-6 ">
