@@ -10,8 +10,7 @@ const FoodCard = ({ item }) => {
     const navigate = useNavigate();
     const location = useLocation();
     const [, refetch] = useCart();
-    const handleAddCrat = item => {
-        console.log(item);
+    const handleAddCrat = () => {
         if(user && user.email){
             const orderItem = {foodId: _id, name, image, price, email: user.email}
             fetch('http://localhost:5000/carts', {

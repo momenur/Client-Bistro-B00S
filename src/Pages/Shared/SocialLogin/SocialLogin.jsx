@@ -23,8 +23,8 @@ const SocialLogin = () => {
                     body: JSON.stringify(saveUser)
                 })
                     .then(res => res.json())
-                    .then(data => {
-                        if (data.insertedId) {
+                    .then(() => {
+                        
                             Swal.fire({
                                 position: 'center',
                                 icon: 'success',
@@ -33,7 +33,6 @@ const SocialLogin = () => {
                                 timer: 1500
                             });
                             navigate(from, { replace: true });
-                        }
                     })
             })
     }
