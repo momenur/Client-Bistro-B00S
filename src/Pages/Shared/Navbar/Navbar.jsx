@@ -32,8 +32,8 @@ const Navbar = () => {
         <li><Link to={`/order/salads`}>Order Food</Link></li>
         <li>
             <Link to='dashboard'>
-                   <FaShoppingCart/> Shopping Cart
-                    <div className="badge badge-secondary">+{cart?.length}</div>
+                <FaShoppingCart /> Shopping Cart
+                <div className="badge badge-secondary">+{cart?.length}</div>
             </Link>
         </li>
         {
@@ -46,6 +46,7 @@ const Navbar = () => {
         }
 
     </>
+    console.log(user);
     return (
         <div>
             <div className="fixed z-50 max-w-screen-xl text-white bg-black navbar bg-opacity-40">
@@ -70,8 +71,10 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="gap-4 navbar-end">
-                    <a className="text-xl font-semibold text-yellow-500">{user?.displayName}</a>
-                    <a className="">Button</a>
+                    <a className="font-semibold ">Hi <span className="text-sm text-yellow-500">{user?.displayName}</span></a>
+                    <div className="w-10 rounded-full">
+                        <img className="w-[40px] h-[40px] rounded-full" src={user?.photoURL}/>
+                    </div>
                 </div>
             </div>
         </div>

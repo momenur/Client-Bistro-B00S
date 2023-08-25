@@ -14,8 +14,8 @@ const Order = () => {
     const { category } = useParams();
     const initialIndex = categories.indexOf(category);
     const [tabIndex, setTabIndex] = useState(initialIndex);
-    const [menu, loading] = useMenu();
-    if (loading) {
+    const [menu, , isLoading] = useMenu();
+    if (isLoading) {
         return <div className="flex items-center justify-center h-screen">
             <Oval
                 height={80}
