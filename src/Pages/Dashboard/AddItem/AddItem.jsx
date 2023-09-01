@@ -1,7 +1,9 @@
 import Swal from "sweetalert2";
 import SectionTitle from "../../../components/SectionTitle";
+import useMenu from "../../../hooks/useMenu";
 
 const AddItem = () => {
+    const [ , refetch] = useMenu();
     const handleAddAnItem = event => {
         event.preventDefault()
         const form = event.target;
@@ -30,8 +32,8 @@ const AddItem = () => {
                         timer: 1500
                     })
                 }
+                refetch()
             }))
-
     }
     return (
         <div>

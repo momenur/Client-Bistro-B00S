@@ -1,11 +1,39 @@
 import { FaPen, FaTrash } from "react-icons/fa";
 import useMenu from "../../../hooks/useMenu";
 import SectionTitle from "../../../components/SectionTitle";
+import Swal from "sweetalert2";
 
 const ManageItem = () => {
-    const [menu] = useMenu()
+    const [menu, refetch] = useMenu()
     const handleDelete = (id) => {
         console.log(id);
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You want to delete this Menu Item!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'delete!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/menu/${id}`, {
+                    method: 'DELETE'
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0){
+                        refetch();
+                        Swal.fire(
+                            'Deleted!',
+                            'This Item has been deleted.',
+                            'success'
+                          ) 
+                    }
+                })
+            }
+        })
     }
     const handleUpdate = (id) => {
         console.log("Update Button Hit", id);
