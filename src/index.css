@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
+#customActive a.active {
+  font: bold;
+  color: yellow;
+}
+#customActive a {
+  background-color: transparent;
+}
+
 #dashboard a.active {
     color: white;
   }
