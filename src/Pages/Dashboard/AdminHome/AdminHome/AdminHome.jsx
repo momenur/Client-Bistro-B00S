@@ -10,7 +10,6 @@ const AdminHome = () => {
     const userPhoto = user.photoURL;
     const [users] = useUsers();
     const [menu] = useMenu();
-    console.log(user?.photoURL);
     return (
         <div>
 

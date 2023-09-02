@@ -1,9 +1,9 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaBars, FaBook, FaUtensils, FaUsers, } from 'react-icons/fa';
+import { FaShoppingCart, FaWallet, FaHome, FaBars, FaBook, FaUtensils, FaUsers, } from 'react-icons/fa';
 import { Helmet } from "react-helmet-async";
 
 const Dashboard = () => {
-    const isAdmin = true
+    const isAdmin = false
    
     return (
         <div className="drawer lg:drawer-open">
@@ -27,13 +27,11 @@ const Dashboard = () => {
                             <li><NavLink to='/dashboard/adminHome'><FaHome />Admin Home</NavLink></li>
                             <li><NavLink to='/dashboard/addItem'><FaUtensils/>Add Item</NavLink></li>
                             <li><NavLink to='/dashboard/manageItem'><FaBars />Manage Items</NavLink></li>
-                            <li><NavLink to='/dashboard/reservations'><FaCalendarAlt />Manage Booking</NavLink></li>
                             <li><NavLink to='/dashboard/users'><FaUsers/>Manage Users</NavLink></li>
                         </> : <>
                             <li><NavLink to='/dashboard/userHome'><FaHome />User Home</NavLink></li>
                             <li><NavLink to='/dashboard/mycart'><FaShoppingCart />My Cart</NavLink></li>
-                            <li><NavLink to='/dashboard/history'><FaWallet />Payment History</NavLink></li>
-                            <li><NavLink to='/dashboard/reservations'><FaCalendarAlt />Reservations</NavLink></li>
+                            <li><NavLink to='/dashboard/userReview'><FaWallet />Your Review</NavLink></li>
                         </>
                     }
 
