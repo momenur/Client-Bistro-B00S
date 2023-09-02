@@ -7,10 +7,11 @@ import { FaShoppingCart } from "react-icons/fa";
 import './Navbar.css'
 
 const Navbar = () => {
+    
     const { user, loading, logOut } = useContext(AuthContext)
     const [cart] = useCart();
     if (loading) {
-        return <p>Loading</p>
+        return <p>Loading...</p>
     }
     const handleLogOut = () => {
         logOut()

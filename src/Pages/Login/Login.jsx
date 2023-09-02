@@ -42,6 +42,10 @@ const Login = () => {
                     </div>
                     <div>
                         <h1 className='mb-4 text-3xl font-bold text-center'>Login</h1>
+                        <div className='flex flex-col items-center text-sm text-[#D1A054]'>
+                            <p>Admin Email: admin@gmail.com</p>
+                            <p>Admin Password: 12345678</p>
+                        </div>
                         <form onSubmit={handleLogin} className="card shadow-none flex-shrink-0 w-full md:min-w-[450px] bg-transparent">
                             <div className="card-body">
                                 <div className="form-control">
