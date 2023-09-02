@@ -15,6 +15,7 @@ import AddItem from "../Pages/Dashboard/AddItem/AddItem";
 import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome/AdminHome";
 import ManageItem from "../Pages/Dashboard/ManageItem/ManageItem";
 import UserHome from "../Pages/Dashboard/UserHome/UserHome";
+import UserReview from "../Pages/Dashboard/UserReview/UserReview";
 
 export const router = createBrowserRouter([
     {
@@ -70,6 +71,10 @@ export const router = createBrowserRouter([
             {
                 path: 'userHome',
                 element: <UserHome/>
+            },
+            {
+                path: "userReview",
+                element: <UserReview/>
             }
         ]
     }

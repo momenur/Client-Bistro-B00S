@@ -3,7 +3,7 @@ import { FaShoppingCart, FaWallet, FaHome, FaBars, FaBook, FaUtensils, FaUsers, 
 import { Helmet } from "react-helmet-async";
 
 const Dashboard = () => {
-    const isAdmin = false
+    const isAdmin = true
    
     return (
         <div className="drawer lg:drawer-open">

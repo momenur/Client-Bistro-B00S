@@ -3,6 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './Banner.css'
 import slider1 from '../../../assets/Home/01.jpg'
 import slider2 from '../../../assets/Home/02.jpg'
+import slider3 from '../../../assets/Home/03.png'
 const Banner = () => {
     return (
         <div>
@@ -12,6 +13,9 @@ const Banner = () => {
                 </div>
                 <div>
                     <img src={slider2}/>
+                </div>
+                <div>
+                    <img src={slider3}/>
                 </div>
             </Carousel>
         </div>
