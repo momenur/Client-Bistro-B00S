@@ -5,6 +5,7 @@ import slider1 from '../../../assets/Home/01.jpg'
 import slider2 from '../../../assets/Home/02.jpg'
 import slider3 from '../../../assets/Home/03.png'
 import slider4 from '../../../assets/Home/04.jpg'
+import slider5 from '../../../assets/Home/05.png'
 const Banner = () => {
     return (
         <div>
@@ -20,6 +21,9 @@ const Banner = () => {
                 </div>
                 <div>
                     <img src={slider4}/>
+                </div>
+                <div>
+                    <img src={slider5}/>
                 </div>
             </Carousel>
         </div>
