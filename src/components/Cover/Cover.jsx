@@ -2,7 +2,7 @@
 import { Parallax } from 'react-parallax';
 const Cover = ({ img, title, subTitle }) => {
     return (
-        <div>
+        <div data-aos="fade-up">
             <Parallax
                 blur={{ min: -20, max: 20 }}
                 bgImage={img}

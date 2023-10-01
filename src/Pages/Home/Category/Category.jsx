@@ -54,9 +54,9 @@ const Category = () => {
                     <h3 className='-mt-6 text-center text-white uppercase md:text-3xl md:-mt-16 md:me-10'>Desserts</h3>
                 </SwiperSlide>
             </Swiper>
-            <div className='mt-24 bg-custom'>
+            <div className='mt-24 bg-custom' data-aos="fade-up">
                 <div className='py-32 mx-32 '>
-                    <div className='px-20 py-20 text-center text-white bg-black bg-opacity-50'>
+                    <div className='px-20 py-20 text-center text-white bg-black bg-opacity-50' data-aos="zoom-out">
                         <h1 className='mb-4 text-4xl uppercase'>Bistro boss</h1>
                         <p className='text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus accusantium magnam beatae rerum esse. Doloremque voluptate odio esse culpa sunt quasi reiciendis aspernatur corporis maxime commodi, enim, ut consectetur incidunt. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias quasi porro delectus vel maxime eligendi odio dignissimos nesciunt, rerum officiis?</p>
                     </div>

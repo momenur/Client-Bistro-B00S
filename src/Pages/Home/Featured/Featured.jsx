@@ -4,7 +4,7 @@ import './Featured.css'
 const Featured = () => {
     return (
         <section className="mt-20 featured-item">
-            <div className="px-32 pt-1 pb-20 text-white bg-black bg-opacity-60">
+            <div className="px-32 pt-1 pb-20 text-white bg-black bg-opacity-60" data-aos="fade-up">
                 <SectionTitle
                     subHeading="check it out"
                     heading="featured item"

@@ -42,7 +42,7 @@ const AdminHome = () => {
                 </div>
                 <div className="bg-gradient-to-r from-orange-500 via-stone-200 to-amber-500 h-[100px] flex justify-center items-center">
                     <div className="px-10">
-                        <h1 className="text-2xl font-bold">Total Menu: {menu.length}</h1>
+                        <h1 className="text-2xl font-bold">Total Users: {users.length}</h1>
                     </div>
                 </div>
             </div>

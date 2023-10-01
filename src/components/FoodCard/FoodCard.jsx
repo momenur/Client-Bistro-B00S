@@ -50,7 +50,7 @@ const FoodCard = ({ item }) => {
         }
     }
     return (
-        <div>
+        <div data-aos="fade-up">
             <div className="rounded-none shadow-xl card w-96 bg-base-100">
                 <figure><img className="border-4 border-[#D1A054]  relative w-[380px] h-[270px]" src={image} alt="Food Image" /></figure>
                 <p className="absolute px-2 py-1 text-yellow-500 rounded-sm bg-slate-800 right-4 top-4">${price}</p>
