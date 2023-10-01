@@ -13,7 +13,7 @@ import quote from '../../../assets/Home/quote.png'
 const Testimonials = () => {
     const [review, setReview] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/reviews")
+        fetch("https://server-bistro-boss-momenurislam6-gmailcom.vercel.app/reviews")
             .then(res => res.json())
             .then(data => setReview(data))
     }, [])

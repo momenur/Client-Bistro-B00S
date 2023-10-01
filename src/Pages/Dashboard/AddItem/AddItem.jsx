@@ -14,7 +14,7 @@ const AddItem = () => {
         const category = form.category.value;
         console.log(name, price, recipe, itemPhoto, category);
         const addItem = {name, price, recipe, image:itemPhoto, category}
-        fetch('http://localhost:5000/menu', {
+        fetch('https://server-bistro-boss-momenurislam6-gmailcom.vercel.app/menu', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

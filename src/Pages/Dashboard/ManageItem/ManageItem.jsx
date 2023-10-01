@@ -17,7 +17,7 @@ const ManageItem = () => {
             confirmButtonText: 'delete!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/menu/${id}`, {
+                fetch(`https://server-bistro-boss-momenurislam6-gmailcom.vercel.app/menu/${id}`, {
                     method: 'DELETE'
                 })
                 .then(res => res.json())

@@ -8,7 +8,7 @@ const useCart = () => {
     const { refetch, data: cart = [] } = useQuery({
         queryKey: ['carts', user?.email],
         queryFn: async () => {
-            const response = await fetch(`http://localhost:5000/carts?email=${user?.email}`)
+            const response = await fetch(`https://server-bistro-boss-momenurislam6-gmailcom.vercel.app/carts?email=${user?.email}`)
             if (!response.ok) {
                 throw new Error('Network response was not ok')
             }

@@ -8,7 +8,7 @@ const useAdmin = () => {
     const { refetch, data: admin = [], isLoading } = useQuery({
         queryKey: ['admin', user?.email],
         queryFn: async () => {
-            const response = await fetch(`http://localhost:5000/users/admin/${user?.email}`)
+            const response = await fetch(`https://server-bistro-boss-momenurislam6-gmailcom.vercel.app/users/admin/${user?.email}`)
             if (!response.ok) {
                 throw new Error('Network response was not ok')
             }
