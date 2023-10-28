@@ -25,6 +25,7 @@ git clone https://github.com/momenur/Client-Bistro-B00S.git
 #### Prerequisites
 
 - [React](https://react.dev)
+- [Firebase](https://console.firebase.google.com)
 - [Node](https://nodejs.org/en/)
 - [Mongodb](https://www.mongodb.com/)
 
