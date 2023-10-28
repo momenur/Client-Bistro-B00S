@@ -19,7 +19,7 @@ const AllUsers = () => {
             confirmButtonText: 'delete!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://server-bistro-boss-momenurislam6-gmailcom.vercel.app/users/${id}`, {
+                fetch(`https://bistro-server-gilt.vercel.app/users/${id}`, {
                     method: 'DELETE'
                 })
                 .then(res => res.json())
@@ -39,7 +39,7 @@ const AllUsers = () => {
 
 
     const handleMakeAdmin = (id) => {
-        fetch(`https://server-bistro-boss-momenurislam6-gmailcom.vercel.app/users/admin/${id}`, {
+        fetch(`https://bistro-server-gilt.vercel.app/users/admin/${id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())

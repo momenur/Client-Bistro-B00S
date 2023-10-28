@@ -17,7 +17,7 @@ const MyCart = () => {
             confirmButtonText: 'delete!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://server-bistro-boss-momenurislam6-gmailcom.vercel.app/carts/${id}`, {
+                fetch(`https://bistro-server-gilt.vercel.app/carts/${id}`, {
                     method: 'DELETE'
                 })
                 .then(res => res.json())

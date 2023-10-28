@@ -12,11 +12,23 @@ import quote from '../../../assets/Home/quote.png'
 
 const Testimonials = () => {
     const [review, setReview] = useState([]);
+
     useEffect(() => {
-        fetch("https://server-bistro-boss-momenurislam6-gmailcom.vercel.app/reviews")
-            .then(res => res.json())
-            .then(data => setReview(data))
-    }, [])
+        async function fetchMyAPI() {
+          let response = await fetch('https://bistro-server-gilt.vercel.app/reviews')
+          response = await response.json()
+          setReview(response)
+        }
+    
+        fetchMyAPI()
+      }, [])
+
+    // useEffect(() => {
+    //     fetch("https://bistro-server-gilt.vercel.app/reviews")
+    //         .then(res => res.json())
+    //         .then(data => setReview(data))
+    // }, [])
+    console.log(review);
     return (
         <section>
             <SectionTitle

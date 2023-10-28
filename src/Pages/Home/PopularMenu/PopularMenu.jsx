@@ -3,8 +3,12 @@ import MenuItem from "../../../components/MenuItem/MenuItem";
 import useMenu from "../../../hooks/useMenu";
 
 const PopularMenu = () => {
-    const [menu] = useMenu()
+    const [menu, ,isLoading] = useMenu()
     const popular = menu.filter(item => item.category === "popular")
+    console.log(isLoading);
+    if(isLoading){
+        return <p>Loading...</p>
+    }
     return (
         <section>
             <SectionTitle
